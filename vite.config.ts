@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Default target is Cloudflare Workers; Render (and most Node hosts) run a
+  // plain Node process instead, so build a standalone node-server bundle.
+  nitro: { preset: "node-server" },
 });
